@@ -1,0 +1,25 @@
+course name,course description
+Programming for Data Science,"Program design and data manipulation with Python. Overview of data structures, iteration, flow control, and program design relevant to data exploration and analysis. When and how to exploit pre-existing libraries."
+Computing Platforms for Data Science,"How to install, maintain, and use the data scientific software ���stack���. The Unix shell, version control, and problem solving strategies. Literate programmin"
+Programming for Data Manipulation,"Program design and data manipulation with R. Organizing, filtering, sorting, grouping, reformatting, converting, and cleaning data to prepare it for further analysis."
+Descriptive Statistics and Probability for Data Science,"Fundamental concepts in probability including conditional, joint, and marginal distributions. Statistical view of data coming from a probability distribution."
+Data Visualization I,Exploratory data analysis. Design of effective static visualizations. Plotting tools in R and Python.
+Algorithms and Data Structures,"How to choose and use appropriate algorithms and data structures to help solve data science problems. Key concepts such as recursion and algorithmic complexity (e.g., efficiency, scalability)."
+Statistical Inference and Computation I,"The statistical and probabilistic foundations of inference, developed jointly through mathematical derivations and simulation techniques. Important distributions and large sample results. Methods for dealing with the multiple testing problem. The frequentist paradigm."
+Supervised Learning I,"Introduction to supervised machine learning. Basic machine learning concepts such as generalization error and overfitting. Various approaches such as K-NN, decision trees, linear classifiers."
+Regression I,"Linear models for a quantitative response variable, with multiple categorical and/or quantitative predictors. Matrix formulation of linear regression. Model assessment and prediction."
+Feature and Model Selection,"How to evaluate and select features and models. Cross-validation, ROC curves, feature engineering, and regularization."
+Data Science Workflows,Interactive vs. scripted/unattended analyses and how to move fluidly between them. Reproducibility through automation and containerization.
+Databases and Data Retrieval,"How to work with data stored in relational database systems. Storage structures and schemas, data relationships, and ways to query and aggregate such data."
+Regression II,"Useful extensions to basic regression, e.g., generalized linear models, mixed effects, smoothing, robust regression, and techniques for dealing with missing data."
+Supervised Learning II,"Introduction to numerical optimization (e.g., gradient descent). Neural networks and deep learning."
+Statistical Inference and Computation II,Bayesian reasoning for data science. How to formulate and implement inference using the prior-to-posterior paradigm.
+Data Visualization II,"How to make principled and effective choices with respect to marks, spatial arrangement, and colour. Analysis, design, and implementation of interactive figures. How to provide multiple views, deal with complexity, and make difficult decisions about data reduction."
+Communication and Argumentation,How to interpret and present data science findings to a variety of audiences. Written and spoken presentation skills.
+Unsupervised Learning,"How to find groups and other structure in unlabeled, possibly high dimensional data. Dimension reduction for visualization and data analysis. Clustering, association rules, model fitting via the EM algorithm."
+Collaborative Software Development,"How to exploit practices from collaborative software development techniques in data scientific workflows. Appropriate use of abstraction, the software life cycle, unit testing / continuous integration, and packaging for use by others."
+Experimentation and Causal Inference,"Statistical evidence from randomized experiments versus observational studies. Applications of randomization, e.g., A/B testing for website optimization. Methods for dealing with the multiple testing problem."
+"Privacy, Ethics, and Security","The legal, ethical, and security issues concerning data, including aggregated data. Proactive compliance with rules and, in their absence, principles for the responsible management of sensitive data. Case studies."
+Advanced Machine Learning,"Advanced machine learning methods, with an undercurrent of natural language processing (NLP) applications. Bag of words, recommender systems, topic models, natural language as sequence data, Markov chains, and RNNs for text synthesis. An introduction to popular NLP libraries in Python."
+Spatial and Temporal Models,Model fitting and prediction in the presence of correlation due to temporal and/or spatial association. ARIMA models.
+Web and Cloud Computing,"How to use the web as a platform for data collection, computation, and publishing. Accessing data via scraping and APIs. Using the cloud for tasks that are beyond the capability of your local computing resources."

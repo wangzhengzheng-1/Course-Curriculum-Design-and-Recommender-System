@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Course Recommender</title>
+
+	<link href="https://surveyjs.azureedge.net/1.8.17/modern.css" type="text/css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://surveyjs.azureedge.net/1.8.17/survey.jquery.min.js"></script>
+
+	<style>
+		h1 {text-align: center;}
+
+		#completeMessage {
+			text-align: center
+		}
+	</style>
+ </head>
+
+ <body>
+ 	<h1>Elective Course Recommender System for Emphasis in Analytics</h1>
+ 	<div id="surveyContainer"></div>
+ 	<div id="completeMessage" style="display: none">
+ 		<h2>Thank you for using our recommander system!</h2>
+ 		<h2>This is a list of recommanded courses:</h2>
+ 	</div>
+ </body>
+ <script type="text/javascript">
+	Survey.StylesManager.applyTheme("modern");
+
+	var surveyJSON = {"pages":[{"name":"page1","elements":[{"type":"radiogroup","name":"question1","title":"What Engineering program are you currently in?","choices":[{"value":"ECE","text":"ECE"},{"value":"MIE","text":"MIE"},{"value":"CHE","text":"CHE"},{"value":"CIV","text":"CIV"},{"value":"useless","text":"Other"}],"otherText":"Other"},{"type":"radiogroup","name":"question3","title":"Are you comfortable with communicating with strangers?","choices":[{"value":"BA","text":"Yes"},{"value":"item2","text":"No"}]},{"type":"radiogroup","name":"question2","title":"Do you prefer learning theory or practical skills?","choices":[{"value":"DS","text":"Theory"},{"value":"DA","text":"Practical skills"}]},{"type":"radiogroup","name":"question4","title":"Which industry would you prefer to work at?","choices":[{"value":"healthcare","text":"Healthcare"},{"value":"finance","text":"Finance"},{"value":"civil","text":"Civil"},{"value":"IT","text":"Information Technology"},{"value":"management","text":"Management"},{"value":"useless","text":"Other"}]}]}],"showCompletedPage":false}
+
+	const courses = [{ "Title": "APS 502H: Financial Engineering", "Program": "na", "Area": "BA", "Industry": "Finance" }, { "Title": "APS 1005H: Operations Research for Engineering Management", "Program": "na", "Area": "DS", "Industry": "Management" }, { "Title": "APS 1017H: Supply Chain Management and Logistics", "Program": "na", "Area": "BA, DA", "Industry": "Management" }, { "Title": "APS 1022H: Financial Engineering II", "Program": "na", "Area": "BA", "Industry": "Finance" }, { "Title": "APS 1040H: Quality Control for Engineering Management", "Program": "na", "Area": "BA, DA", "Industry": "Management" }, { "Title": "APS 1050H: Blockchain Technologies", "Program": "na", "Area": "BA", "Industry": "Finance, IT" }, { "Title": "APS 1051H: Portfolio Management Praxis Under Real Market Constraint", "Program": "na", "Area": "BA", "Industry": "Finance, Management" }, { "Title": "APS 1052H: A.I. in Finance", "Program": "na", "Area": "DS, DA", "Industry": "Finance" }, { "Title": "APS 1080H: Introduction to Reinforcement Learning", "Program": "na", "Area": "DS, DA", "Industry": "All" }, { "Title": "CHE 507H: Data-based Modelling for Prediction and Control", "Program": "CHE", "Area": "DS, DA", "Industry": "Others" }, { "Title": "CHE 1148H: Process Data Analytics", "Program": "CHE", "Area": "DS, DA", "Industry": "Others" }, { "Title": "CHE 1434H: Six Sigma for Chemical Processes", "Program": "CHE", "Area": "na", "Industry": "Others" }, { "Title": "CIV 1504H: Applied Probability and Statistics for Civil Engineering", "Program": "CIV", "Area": " DA", "Industry": "Civil" }, { "Title": "CIV 1506H: Freight Transportation and ITS Applications", "Program": "CIV", "Area": "BA", "Industry": "Civil" }, { "Title": "CIV 1507H: Public Transport", "Program": "CIV", "Area": "BA, DA", "Industry": "Civil" }, { "Title": "CIV 1532H: Fundamentals of ITS and Traffic Management", "Program": "CIV", "Area": "BA", "Industry": "Civil, Management" }, { "Title": "CIV 1538H: Transportation Demand Analysis", "Program": "CIV", "Area": "BA", "Industry": "Civil" }, { "Title": "CEM 1002H: Empirical Study of Cities", "Program": "CEM", "Area": "BA", "Industry": "Management" }, { "Title": "ECE 537H: Random Processes", "Program": "ECE", "Area": "na", "Industry": "All" }, { "Title": "ECE1504H: Statistical Learning", "Program": "ECE", "Area": "DS", "Industry": "All" }, { "Title": "ECE 1505H: Convex Optimization", "Program": "ECE", "Area": "na", "Industry": "All" }, { "Title": "ECE 1510H: Advanced Inference Algorithms", "Program": "ECE", "Area": "DS", "Industry": "All" }, { "Title": "ECE 1657H: Game Theory and Evolutionary Games", "Program": "ECE", "Area": "na", "Industry": "Others" }, { "Title": "ECE 1778H: Creative Applications for Mobile Devices", "Program": "ECE", "Area": "na", "Industry": "IT" }, { "Title": "ECE 1779H: Introduction to Cloud Computing", "Program": "ECE", "Area": "DS, DA", "Industry": "IT" }, { "Title": "MIE562H Scheduling", "Program": "MIE", "Area": "na", "Industry": "Others" }, { "Title": "MIE 1413H Statistical Models in Empirical Research", "Program": "MIE", "Area": "DS", "Industry": "IT, Finance" }, { "Title": "MIE 1501H: Knowledge Modelling and Management", "Program": "MIE", "Area": "BA, DA", "Industry": "Management" }, { "Title": "MIE 1512H: Data Analytics", "Program": "MIE", "Area": "DA", "Industry": "All" }, { "Title": "MIE 1513H: Decision Support Systems", "Program": "MIE", "Area": "DS", "Industry": "All" }, { "Title": "MIE 1620H: Linear Programming and Network Flows", "Program": "MIE", "Area": "DS", "Industry": "IT" }, { "Title": "MIE 1621H: NonLinear Optimization", "Program": "MIE", "Area": "DS", "Industry": "All" }, { "Title": "MIE 1622H: Computational Finance and Risk Management", "Program": "MIE", "Area": "DA", "Industry": "Finance" }, { "Title": "MIE 1623H: Introduction to Healthcare Engineering", "Program": "MIE", "Area": "DA", "Industry": "Healthcare" }, { "Title": "MIE1628H: Big Data Science", "Program": "MIE", "Area": "DS", "Industry": "IT" }, { "Title": "MIE 1653H: Integer Programming Applications", "Program": "MIE", "Area": "DS", "Industry": "IT" }, { "Title": "MIE 1721H: Reliability", "Program": "MIE", "Area": "DA, BA", "Industry": "Others" }, { "Title": "MIE 1723H: Engineering Asset Management", "Program": "MIE", "Area": "DA, BA", "Industry": "Management" }, { "Title": "MIE 1727H: Statistical Methods of Quality Assurance", "Program": "MIE", "Area": "BA", "Industry": "Other" }, { "Title": "MSE 1063H: Application of Artificial Intelligence in Process Metallurgy", "Program": "MIE", "Area": "DS", "Industry": "Other" }]
+
+	function sendDataToServer(survey) {
+	    //send Ajax request to your web server.
+	    const courses = Recommander(survey.data);
+	    const message = $("#completeMessage")
+	    message.css({"display": "block"})
+	    const recommandedCourses = $("<div id='recommandedCourses'>")
+	    for (course of courses) {
+	    	const courseDiv = $("<div class='course'>")
+	    	courseDiv.html(course.Title)
+	    	recommandedCourses.append(courseDiv)
+	    }
+	    message.append(recommandedCourses)
+	}
+
+	function Recommander(data) {
+
+		for (course of courses) {
+			course.score = 0
+			//program
+			if (course.Program == data.question1) { course.score += 0.5 }
+			//DA, DS, BA
+			if (course.Area.includes(data.question2)) { course.score += 1.5 } //BA or other
+			else if (course.Area.includes(data.question3)) { course.score += 1.5 } //DA or DS
+			//Industry
+			if (course.Industry.includes(data.question4)) { course.score += 1 } //Industry
+			else if (course.Industry == "All") { course.score += 0.3 } //If a course applies to all
+		}
+
+		function sort(array) {
+			return array.sort(function(a, b) {
+				var x = a.score; var y = b.score;
+				return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+			});
+		}
+
+		sortedCourses = sort(courses)
+		console.log(sortedCourses)
+		return(sortedCourses.slice(0,5))
+	}
+
+	var survey = new Survey.Model(surveyJSON);
+	$("#surveyContainer").Survey({
+	    model: survey,
+	    onComplete: sendDataToServer
+	});
+
+</script>
+</html>
